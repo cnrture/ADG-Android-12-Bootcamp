@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/show_gryffindor" android:title="Show Gryffindor" />
+    <item android:id="@+id/show_hufflepuff" android:title="Show Hufflepuff" />
+    <item android:id="@+id/show_ravenclaw" android:title="Show Ravenclaw" />
+    <item android:id="@+id/show_slytherin" android:title="Show Slytherin" />
+
+</menu>
