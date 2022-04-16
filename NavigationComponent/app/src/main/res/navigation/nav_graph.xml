@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/anaSayfaFragment">
+
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.canerture.adbootcampnavigationcomponent.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/anaSayfaToTahmin"
+            app:destination="@id/tahminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tahminFragment"
+        android:name="com.canerture.adbootcampnavigationcomponent.TahminFragment"
+        android:label="fragment_tahmin"
+        tools:layout="@layout/fragment_tahmin" >
+        <action
+            android:id="@+id/tahminToSonuc"
+            app:destination="@id/sonucFragment"
+            app:popUpTo="@id/tahminFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sonucFragment"
+        android:name="com.canerture.adbootcampnavigationcomponent.SonucFragment"
+        android:label="fragment_sonuc"
+        tools:layout="@layout/fragment_sonuc" >
+        <argument
+            android:name="sonuc"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.canerture.adbootcampnavigationcomponent.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" />
+</navigation>

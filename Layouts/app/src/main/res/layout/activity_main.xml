@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/hizmet_bedeli_edit_text"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hizmet_bedeli"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/memnuniyet_sorusu_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hizmetten memnun kaldınız mı?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hizmet_bedeli_edit_text"/>
+
+    <RadioGroup
+        android:id="@+id/bahsis_secenekleri_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:checkedButton="@id/yuzde_yirmi_radio_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/memnuniyet_sorusu_text_view">
+
+        <RadioButton
+            android:id="@+id/yuzde_yirmi_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#ffa000"
+            android:text="Mükemmel (%20)"
+            app:useMaterialThemeColors="false" />
+
+        <RadioButton
+            android:id="@+id/yuzde_onsekiz_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#C2185B"
+            android:text="İyi (%18)" />
+
+        <RadioButton
+            android:id="@+id/yuzde_onbes_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İdare eder (%15)"/>
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/bahsis_yukari_yuvarla_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bahşiş üst sayıya yuvarlansın mı?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bahsis_secenekleri_radio_group"/>
+
+    <Button
+        android:id="@+id/hesapla_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="HESAPLA"
+        app:layout_constraintTop_toBottomOf="@id/bahsis_yukari_yuvarla_switch"/>
+
+    <TextView
+        android:id="@+id/bahsis_tutari_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hesapla_button"
+        tools:text="Bahşiş Tutarı: 20₺" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
